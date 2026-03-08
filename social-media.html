@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Management | Brand Growth Experts | SigmaWeb</title>
+    <meta name="description"
+        content="Enhance your social media presence with SigmaWeb. We handle everything from content creation to community management and targeted ads.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sigmaweb.in/social-media.html">
+    <meta property="og:title" content="Social Media Management | SigmaWeb">
+    <meta property="og:description" content="Engaging social media strategies for modern brands.">
+    <meta property="og:image" content="https://sigmaweb.in/images/logo1.png">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        :root {
+            --primary: #0ea5e9;
+            --primary-glow: rgba(14, 165, 233, 0.4);
+            --bg-dark: #050505;
+            --card-bg: rgba(20, 20, 20, 0.6);
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #050505;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #ff0033;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 0, 51, 0.5);
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #ff0033;
+        }
+
+        .glass {
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .nav-blur {
+            backdrop-filter: blur(16px);
+            background: rgba(5, 5, 5, 0.8);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-up {
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .hero-gradient {
+            background: radial-gradient(circle at 50% 50%, rgba(14, 165, 233, 0.1), transparent 70%);
+        }
+
+        /* Light Mode Styles */
+        html.light {
+            --bg-dark: #f8fafc;
+            --card-bg: rgba(255, 255, 255, 0.8);
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+        }
+
+        html.light body {
+            background-color: #f8fafc;
+            color: #0f172a;
+        }
+
+        html.light .glass {
+            background: white;
+            border: 1px solid rgba(14, 165, 233, 0.1);
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+        }
+
+        html.light .nav-blur {
+            background: rgba(255, 255, 255, 0.8);
+            border-bottom: 1px solid rgba(14, 165, 233, 0.1);
+        }
+
+        html.light .text-white:not(.force-white),
+        html.light h1,
+        html.light h2:not(.force-white),
+        html.light h3:not(.force-white),
+        html.light h4:not(.force-white) {
+            color: #0f172a !important;
+        }
+
+        html.light .force-white {
+            color: #f1f5f9 !important;
+        }
+
+        html.light .text-slate-400,
+        html.light .text-slate-500 {
+            color: #475569 !important;
+        }
+    </style>
+    <script>
+        if (localStorage.getItem('theme') === 'light' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: light)').matches)) {
+            document.documentElement.classList.add('light');
+        } else {
+            document.documentElement.classList.remove('light');
+        }
+    </script>
+</head>
+
+<body class="bg-[#050505] text-slate-200">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 nav-blur">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <a href="index.html" class="flex items-center gap-3">
+                    <img src="images/logo1.png" alt="SigmaWeb Logo"
+                        class="w-10 h-10 rounded-lg object-cover border border-white/10">
+                    <span class="text-2xl font-bold tracking-tight text-white">Sigma<span
+                            class="text-sky-500">Web</span></span>
+                </a>
+            </div>
+            <div class="flex items-center gap-4">
+                <button id="theme-toggle" class="p-2 rounded-full hover:bg-white/10 transition-colors text-sky-500">
+                    <i data-lucide="moon" class="dark-icon"></i>
+                    <i data-lucide="sun" class="light-icon hidden"></i>
+                </button>
+                <a href="index.html#contact"
+                    class="px-5 py-2.5 bg-sky-500 text-black rounded-full font-bold hover:bg-sky-400 transition-all text-sm">Get
+                    Started</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 1. Hero Section -->
+    <section class="pt-32 pb-20 relative overflow-hidden hero-gradient">
+        <div class="max-w-7xl mx-auto px-6 text-center relative z-10">
+            <div
+                class="inline-block px-4 py-1.5 bg-sky-500/10 border border-sky-500/20 rounded-full text-sky-400 text-sm font-semibold mb-6 animate-fade-up">
+                Be Social, Be Seen
+            </div>
+            <h1 class="text-5xl md:text-7xl font-extrabold mb-6 text-white animate-fade-up"
+                style="animation-delay: 0.1s;">
+                Social Media <span
+                    class="bg-gradient-to-r from-sky-400 to-sky-600 bg-clip-text text-transparent">Marketing</span>
+            </h1>
+            <p class="text-xl text-slate-400 max-w-2xl mx-auto mb-10 animate-fade-up" style="animation-delay: 0.2s;">
+                Turn followers into fans. We create engaging content and smart ad campaigns across every major platform.
+            </p>
+            <div class="animate-fade-up" style="animation-delay: 0.3s;">
+                <a href="#contact"
+                    class="px-8 py-4 bg-sky-500 text-black rounded-full font-bold hover:bg-sky-400 transition-all">Go
+                    Viral Today</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Service Overview -->
+    <section class="py-24 border-y border-white/5 bg-white/[0.01]">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+            <div class="animate-fade-up">
+                <h2 class="text-3xl font-bold text-white mb-6">Master the Feed</h2>
+                <p class="text-slate-400 text-lg leading-relaxed mb-8">
+                    Social media is the heartbeat of modern branding. We don't just "post content"—we build communities.
+                    By combining cultural trends with data analytics, we ensure your brand remains relevant and engaging
+                    in the ever-changing social landscape.
+                </p>
+                <div class="grid grid-cols-2 gap-6">
+                    <div class="glass p-6 rounded-2xl text-center">
+                        <i data-lucide="share-2" class="text-sky-500 mx-auto mb-4"></i>
+                        <h4 class="text-white font-bold">Engagement</h4>
+                    </div>
+                    <div class="glass p-6 rounded-2xl text-center">
+                        <i data-lucide="users" class="text-sky-500 mx-auto mb-4"></i>
+                        <h4 class="text-white font-bold">Brand Loyalty</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="animate-fade-up" style="animation-delay: 0.2s;">
+                <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1974&auto=format&fit=crop"
+                    alt="Social Media" class="rounded-3xl shadow-2xl">
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Our Process -->
+    <section class="py-24">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold text-white mb-16">The Social Strategy</h2>
+            <div class="grid md:grid-cols-4 gap-8 text-left">
+                <div class="glass p-8 rounded-3xl animate-fade-up">
+                    <h4 class="text-xl font-bold text-white mb-4">01. Audit</h4>
+                    <p class="text-slate-500 text-sm">Evaluating your current presence and competitor performance.</p>
+                </div>
+                <div class="glass p-8 rounded-3xl animate-fade-up" style="animation-delay: 0.1s;">
+                    <h4 class="text-xl font-bold text-white mb-4">02. Content</h4>
+                    <p class="text-slate-500 text-sm">Designing viral-ready creative assets and scheduling posts.</p>
+                </div>
+                <div class="glass p-8 rounded-3xl animate-fade-up" style="animation-delay: 0.2s;">
+                    <h4 class="text-xl font-bold text-white mb-4">03. Amplify</h4>
+                    <p class="text-slate-500 text-sm">Boosting reach through targeted paid advertising and influencers.
+                    </p>
+                </div>
+                <div class="glass p-8 rounded-3xl animate-fade-up" style="animation-delay: 0.3s;">
+                    <h4 class="text-xl font-bold text-white mb-4">04. Engage</h4>
+                    <p class="text-slate-500 text-sm">Managing comments, messages, and building a loyal community.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Features / What You Get -->
+    <section class="py-24 bg-white/[0.01] border-y border-white/5">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16">
+            <div class="animate-fade-up">
+                <h2 class="text-3xl font-bold text-white mb-8">Service Modules</h2>
+                <div class="space-y-4">
+                    <div class="flex items-center gap-4 text-slate-400 glass p-4 rounded-xl">
+                        <i data-lucide="check" class="text-sky-500"></i>
+                        <span>Platform Management (FB, IG, LI, TT)</span>
+                    </div>
+                    <div class="flex items-center gap-4 text-slate-400 glass p-4 rounded-xl">
+                        <i data-lucide="check" class="text-sky-500"></i>
+                        <span>Short-Form Video Production (Reels/TikTok)</span>
+                    </div>
+                    <div class="flex items-center gap-4 text-slate-400 glass p-4 rounded-xl">
+                        <i data-lucide="check" class="text-sky-500"></i>
+                        <span>Influencer Outreach & Management</span>
+                    </div>
+                </div>
+            </div>
+            <div class="glass p-10 rounded-3xl animate-fade-up" style="animation-delay: 0.2s;">
+                <h4 class="text-white font-bold mb-4 text-xl">Community Centered</h4>
+                <p class="text-slate-500 leading-relaxed">We don't talk TO your audience; we talk WITH them. Our
+                    community management ensures your brand feels human and approachable.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Why Choose Us -->
+    <section class="py-24">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold text-white mb-16">The SigmaWeb Standard</h2>
+            <div class="grid md:grid-cols-3 gap-8 text-left">
+                <div class="glass p-10 rounded-3xl animate-fade-up">
+                    <h4 class="text-white font-bold mb-4 text-xl">Trend Awareness</h4>
+                    <p class="text-slate-500">We jump on trends before they fade to maximize your brand's reach.</p>
+                </div>
+                <div class="glass p-10 rounded-3xl animate-fade-up" style="animation-delay: 0.1s;">
+                    <h4 class="text-white font-bold mb-4 text-xl">Creative DNA</h4>
+                    <p class="text-slate-500">In-house designers and videographers tailored for social creative.</p>
+                </div>
+                <div class="glass p-10 rounded-3xl animate-fade-up" style="animation-delay: 0.2s;">
+                    <h4 class="text-white font-bold mb-4 text-xl">Data Logic</h4>
+                    <p class="text-slate-500">Optimization based on actual engagement and conversion data.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Case Study / Example Work -->
+    <section class="py-24 bg-white/[0.01]">
+        <div class="max-w-7xl mx-auto px-6">
+            <div
+                class="glass rounded-[3rem] overflow-hidden flex flex-col md:flex-row items-center border border-white/10">
+                <div class="w-full md:w-1/2 h-[400px]">
+                    <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1974&auto=format&fit=crop"
+                        alt="Social Case Study" class="w-full h-full object-cover">
+                </div>
+                <div class="p-12 md:w-1/2">
+                    <div class="text-sky-500 font-bold text-sm uppercase mb-4">FinTech Startup</div>
+                    <h4 class="text-3xl font-bold text-white mb-6">Neobank Social Viral</h4>
+                    <p class="text-slate-400 mb-8">Generated 10M+ impressions for a new neobank using a viral TikTok
+                        challenge and strategic influencer partnerships.</p>
+                    <a href="#"
+                        class="inline-flex items-center gap-2 text-white font-bold border-b border-sky-500 pb-1">View
+                        Campaign Creative <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. FAQ Section -->
+    <section class="py-24">
+        <div class="max-w-3xl mx-auto px-6">
+            <h2 class="text-center text-3xl font-bold text-white mb-16">Social Media FAQ</h2>
+            <div class="space-y-4">
+                <div class="glass p-6 rounded-2xl">
+                    <h4 class="text-white font-bold mb-2">Should I be on every platform?</h4>
+                    <p class="text-slate-500 text-sm">No. We identify where your ideal customers hang out and focus your
+                        energy there for maximum ROI.</p>
+                </div>
+                <div class="glass p-6 rounded-2xl">
+                    <h4 class="text-white font-bold mb-2">Do you handle customer service?</h4>
+                    <p class="text-slate-500 text-sm">We manage initial engagement and common queries, escalating
+                        complex issues directly to your team.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. Call To Action -->
+    <section class="py-24 relative overflow-hidden border-t border-white/5">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="glass p-12 md:p-16 rounded-[3rem] text-center relative z-10">
+                <h3 class="text-4xl font-bold text-white mb-6">Own Your Industry's Feed</h3>
+                <p class="text-slate-400 text-lg mb-10">Stop posting blindly. Let's build a strategic social presence
+                    that results in real followers and real revenue.</p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="index.html#contact"
+                        class="px-8 py-4 bg-sky-500 text-black rounded-full font-bold hover:bg-sky-400 transition-all">Start
+                        Your Strategy</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black pt-20 pb-10 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12 mb-16 text-left">
+            <div class="col-span-1 md:col-span-1">
+                <a href="index.html" class="flex items-center gap-3 mb-6">
+                    <img src="images/logo1.png" alt="SigmaWeb Logo"
+                        class="w-10 h-10 rounded-lg object-cover border border-white/10">
+                    <span class="text-2xl font-bold tracking-tight text-white">Sigma<span
+                            class="text-sky-500">Web</span></span>
+                </a>
+                <p class="text-slate-400 mb-6 leading-relaxed">
+                    Building the digital future with premium design and high-performance solutions.
+                </p>
+                <div class="flex gap-4">
+                    <a href="#"
+                        class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center text-slate-400 hover:bg-sky-500 hover:text-black transition-all">
+                        <i data-lucide="twitter" class="w-5 h-5"></i>
+                    </a>
+                    <a href="#"
+                        class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center text-slate-400 hover:bg-sky-500 hover:text-black transition-all">
+                        <i data-lucide="linkedin" class="w-5 h-5"></i>
+                    </a>
+                    <a href="#"
+                        class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center text-slate-400 hover:bg-sky-500 hover:text-black transition-all">
+                        <i data-lucide="instagram" class="w-5 h-5"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div>
+                <h4 class="text-white force-white font-bold mb-6 text-xl">Quick Links</h4>
+                <ul class="space-y-4 text-slate-500 text-base">
+                    <li><a href="index.html" class="hover:text-sky-500 transition-colors">About Us</a></li>
+                    <li><a href="index.html#services" class="hover:text-sky-500 transition-colors">Our Services</a></li>
+                    <li><a href="index.html#portfolio" class="hover:text-sky-500 transition-colors">Portfolio</a></li>
+                    <li><a href="index.html#contact" class="hover:text-sky-500 transition-colors">Contact</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-white force-white font-bold mb-6 text-xl">Services</h4>
+                <ul class="space-y-4 text-slate-500 text-base">
+                    <li><a href="custom-website.html" class="hover:text-sky-500 transition-colors">Web Development</a>
+                    </li>
+                    <li><a href="mobile-app.html" class="hover:text-sky-500 transition-colors">Mobile Apps</a></li>
+                    <li><a href="seo.html" class="hover:text-sky-500 transition-colors">SEO Optimization</a></li>
+                    <li><a href="digital-marketing.html" class="hover:text-sky-500 transition-colors">Digital
+                            Marketing</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-white force-white font-bold mb-6 text-xl">Contact</h4>
+                <ul class="space-y-4 text-slate-500 text-base">
+                    <li class="flex items-center gap-3">
+                        <i data-lucide="mail" class="w-5 h-5 text-sky-500"></i>
+                        <a href="mailto:shubhamysky@gmail.com"
+                            class="hover:text-sky-500 transition-colors">shubhamysky@gmail.com</a>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i data-lucide="phone" class="w-5 h-5 text-sky-500"></i>
+                        <a href="tel:+918393084696" class="hover:text-sky-500 transition-colors">+91 83930 84696</a>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i data-lucide="map-pin" class="w-5 h-5 text-sky-500 mt-1"></i>
+                        Cyber Hub, Gurugram, India
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div
+            class="max-w-7xl mx-auto px-6 pt-10 border-t border-white/5 flex flex-col md:row justify-between items-center gap-6 text-center">
+            <p class="text-slate-500 text-base">© 2024 SigmaWeb. All rights reserved.</p>
+            <div class="flex gap-8 text-sm text-slate-600 font-bold uppercase tracking-widest">
+                <a href="#" class="hover:text-sky-500 transition-colors">Privacy Policy</a>
+                <a href="#" class="hover:text-sky-500 transition-colors">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/918393084696" target="_blank"
+        class="fixed bottom-8 right-8 z-[60] w-16 h-16 bg-[#25D366] rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform animate-bounce-slow group">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 448 512" fill="white">
+            <path
+                d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-5.5-2.8-23.4-8.6-44.4-27.4-16.4-14.6-27.4-32.7-30.6-38.2-3.2-5.6-.3-8.6 2.4-11.4 2.5-2.5 5.5-6.5 8.3-9.7 2.8-3.2 3.7-5.5 5.5-9.3.5-3.7-.4-6.9-1.9-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 13.2 5.7 23.5 9.2 31.6 11.8 13.3 4.2 25.4 3.6 35 2.2 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" />
+        </svg>
+        <span
+            class="absolute right-full mr-4 bg-black/80 text-white px-4 py-2 rounded-lg text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none border border-white/10">Chat
+            with us!</span>
+    </a>
+
+    <style>
+        @keyframes bounce-slow {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .animate-bounce-slow {
+            animation: bounce-slow 3s infinite ease-in-out;
+        }
+    </style>
+
+    <script>
+        lucide.createIcons();
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const sunIcon = themeToggleBtn.querySelector('.light-icon');
+        const moonIcon = themeToggleBtn.querySelector('.dark-icon');
+        function updateIcons() {
+            if (document.documentElement.classList.contains('light')) {
+                sunIcon.classList.remove('hidden');
+                moonIcon.classList.add('hidden');
+            } else {
+                sunIcon.classList.add('hidden');
+                moonIcon.classList.remove('hidden');
+            }
+        }
+        updateIcons();
+        themeToggleBtn.addEventListener('click', () => {
+            document.documentElement.classList.toggle('light');
+            localStorage.setItem('theme', document.documentElement.classList.contains('light') ? 'light' : 'dark');
+            updateIcons();
+        });
+    </script>
+</body>
+
+</html>

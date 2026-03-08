@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | SigmaWeb</title>
+    <meta name="description"
+        content="Privacy Policy for SigmaWeb - Learn how we collect, use, and protect your personal information.">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Custom Styles & Animations -->
+    <style>
+        :root {
+            --primary: #0ea5e9;
+            --primary-glow: rgba(14, 165, 233, 0.4);
+            --bg-dark: #050505;
+            --card-bg: rgba(20, 20, 20, 0.6);
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #050505;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #ff0033;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 0, 51, 0.5);
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary);
+        }
+
+        /* Glassmorphism */
+        .glass {
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Nav Blur */
+        .nav-blur {
+            backdrop-filter: blur(16px);
+            background: rgba(5, 5, 5, 0.8);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Light Mode Styles */
+        html.light {
+            --bg-dark: #f8fafc;
+            --card-bg: rgba(255, 255, 255, 0.8);
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+        }
+
+        html.light body {
+            background-color: #f8fafc;
+            color: #0f172a;
+        }
+
+        html.light .glass {
+            background: white;
+            border: 1px solid rgba(14, 165, 233, 0.1);
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+        }
+
+        html.light .nav-blur {
+            background: rgba(255, 255, 255, 0.8);
+            border-bottom: 1px solid rgba(14, 165, 233, 0.1);
+        }
+    </style>
+    <script>
+        // Theme initialization
+        if (localStorage.getItem('theme') === 'light' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: light)').matches)) {
+            document.documentElement.classList.add('light');
+        } else {
+            document.documentElement.classList.remove('light');
+        }
+    </script>
+</head>
+
+<body class="bg-[#050505] text-slate-200">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 nav-blur">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <a href="index.html" class="flex items-center gap-3">
+                    <img src="images/logo1.png" alt="SigmaWeb Logo"
+                        class="w-10 h-10 rounded-lg object-cover border border-white/10">
+                    <span class="text-2xl font-bold tracking-tight text-white">Sigma<span
+                            class="text-sky-500">Web</span></span>
+                </a>
+            </div>
+
+            <div class="flex items-center gap-8 text-sm font-medium">
+                <a href="index.html" class="text-white hover:text-sky-500 transition-colors">Back to Home</a>
+                <button id="theme-toggle" class="p-2 rounded-full hover:bg-white/10 transition-colors text-sky-500">
+                    <i data-lucide="moon" class="dark-icon"></i>
+                    <i data-lucide="sun" class="light-icon hidden"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Content Section -->
+    <section class="pt-32 pb-24">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="glass p-12 rounded-[2.5rem] border border-white/5">
+                <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Privacy Policy</h1>
+                <p class="text-sky-500 font-bold mb-12">Last Updated: March 2026</p>
+
+                <div class="space-y-8 text-slate-400 leading-relaxed">
+                    <p>At SigmaWeb, accessible from sigmaweb.in, we are committed to protecting the privacy and security
+                        of our visitors, clients, and users. This Privacy Policy explains how we collect, use, store,
+                        and protect your personal information when you access our website or use our digital services.
+                        By using our website, you agree to the practices described in this policy.</p>
+
+                    <div>
+                        <h2 class="text-2xl font-bold text-white mb-4">Information We Collect</h2>
+                        <p>When you visit our website or interact with our services, we may collect certain personal and
+                            non-personal information. Personal information may include your name, email address, phone
+                            number, company name, and any details you provide when contacting us or requesting our
+                            services. This information helps us communicate with you and provide the services you
+                            request.</p>
+                        <p class="mt-4">We may also automatically collect technical information such as your IP address,
+                            browser type, device information, pages visited, and the time spent on our website. This
+                            data helps us analyze website performance, improve user experience, and maintain the
+                            security of our platform.</p>
+                    </div>
+
+                    <div>
+                        <h2 class="text-2xl font-bold text-white mb-4">How We Use Your Information</h2>
+                        <p>The information collected through our website is used primarily to provide and improve our
+                            services. This includes responding to inquiries, delivering web development and SEO
+                            services, managing client relationships, and providing technical support.</p>
+                        <p class="mt-4">We may also use your information to improve the functionality of our website,
+                            analyze user behavior, and enhance the quality of our services. Occasionally, we may send
+                            updates, service notifications, or promotional information related to our digital solutions.
+                            You may opt out of such communications at any time.</p>
+                    </div>
+
+                    <div>
+                        <h2 class="text-2xl font-bold text-white mb-4">Cookies and Tracking Technologies</h2>
+                        <p>Our website may use cookies and similar technologies to enhance your browsing experience.
+                            Cookies allow us to understand how visitors interact with our website, remember user
+                            preferences, and improve website functionality. These technologies help us analyze traffic
+                            patterns and optimize the overall performance of our platform.</p>
+                        <p class="mt-4">You have the option to disable cookies through your browser settings. However,
+                            some parts of the website may not function properly if cookies are disabled.</p>
+                    </div>
+
+                    <div>
+                        <h2 class="text-2xl font-bold text-white mb-4">Third-Party Services</h2>
+                        <p>To operate and improve our services, we may rely on trusted third-party providers such as web
+                            hosting companies, analytics services, and digital marketing tools. These providers may have
+                            access to limited information necessary to perform their functions but are required to
+                            maintain confidentiality and protect user data.</p>
+                        <p class="mt-4">Each third-party service operates under its own privacy policies, and we
+                            encourage users to review those policies for more information.</p>
+                    </div>
+
+                    <div>
+                        <h2 class="text-2xl font-bold text-white mb-4">Data Security</h2>
+                        <p>Protecting your information is a priority for us. We implement appropriate technical and
+                            organizational security measures to safeguard personal data against unauthorized access,
+                            misuse, or disclosure. While we strive to maintain a secure environment, no online system
+                            can guarantee complete security. Therefore, users should also take precautions when sharing
+                            personal information online.</p>
+                    </div>
+
+                    <div>
+                        <h2 class="text-2xl font-bold text-white mb-4">Information Sharing</h2>
+                        <p>SigmaWeb does not sell, rent, or trade personal information to third parties. We may only
+                            share information when it is necessary to deliver our services, comply with legal
+                            obligations, protect our rights, or prevent fraudulent activities. Any sharing of
+                            information is limited to trusted partners who assist us in operating our business.</p>
+                    </div>
+
+                    <div>
+                        <h2 class="text-2xl font-bold text-white mb-4">External Links</h2>
+                        <p>Our website may include links to external websites or resources that are not operated by us.
+                            While we strive to link only to reputable sources, we are not responsible for the privacy
+                            practices or content of third-party websites. Users should review the privacy policies of
+                            any external sites they visit.</p>
+                    </div>
+
+                    <div>
+                        <h2 class="text-2xl font-bold text-white mb-4">User Rights and Choices</h2>
+                        <p>Users have the right to request access to the personal information we hold about them. You
+                            may also request corrections, updates, or deletion of your information if it is inaccurate
+                            or no longer required. If you wish to exercise these rights or have concerns regarding your
+                            data, you may contact us directly.</p>
+                    </div>
+
+                    <div>
+                        <h2 class="text-2xl font-bold text-white mb-4">Children's Privacy</h2>
+                        <p>Our services are intended for individuals and businesses and are not directed toward children
+                            under the age of 13. We do not knowingly collect personal information from children. If we
+                            become aware that such information has been collected, we will take appropriate steps to
+                            remove it from our records.</p>
+                    </div>
+
+                    <div>
+                        <h2 class="text-2xl font-bold text-white mb-4">Updates to This Policy</h2>
+                        <p>We may update this Privacy Policy from time to time to reflect changes in our services,
+                            technology, or legal requirements. Any updates will be published on this page along with the
+                            revised date. We encourage users to review this page periodically to stay informed about how
+                            we protect their information.</p>
+                    </div>
+
+                    <div>
+                        <h2 class="text-2xl font-bold text-white mb-4">Contact Information</h2>
+                        <p>If you have any questions, concerns, or requests related to this Privacy Policy or your
+                            personal data, you may contact us through our website.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black pt-20 pb-10 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-2">
+                <div
+                    class="w-8 h-8 bg-sky-500 rounded-lg flex items-center justify-center font-bold text-black text-lg">
+                    Σ</div>
+                <span class="text-xl font-bold text-white">Sigma<span class="text-sky-500">Web</span></span>
+            </div>
+            <p class="text-slate-500 text-base">© 2026 SigmaWeb. All rights reserved.</p>
+            <div class="flex gap-8 text-sm text-slate-600 font-bold uppercase tracking-widest">
+                <a href="index.html" class="hover:text-sky-500 transition-colors">Home</a>
+                <a href="terms-of-service.html" class="hover:text-sky-500 transition-colors">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Theme Toggle Logic
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const sunIcon = themeToggleBtn.querySelector('.light-icon');
+        const moonIcon = themeToggleBtn.querySelector('.dark-icon');
+
+        function updateIcons() {
+            if (document.documentElement.classList.contains('light')) {
+                sunIcon.classList.remove('hidden');
+                moonIcon.classList.add('hidden');
+            } else {
+                sunIcon.classList.add('hidden');
+                moonIcon.classList.remove('hidden');
+            }
+        }
+
+        updateIcons();
+
+        themeToggleBtn.addEventListener('click', () => {
+            document.documentElement.classList.toggle('light');
+            if (document.documentElement.classList.contains('light')) {
+                localStorage.setItem('theme', 'light');
+            } else {
+                localStorage.setItem('theme', 'dark');
+            }
+            updateIcons();
+        });
+    </script>
+</body>
+
+</html>
