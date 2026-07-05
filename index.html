@@ -162,77 +162,11 @@
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        /* Mobile Menu Styles */
-        .mobile-menu {
-            position: fixed;
-            top: 70px;
-            left: 0;
-            right: 0;
-            background: rgba(5, 5, 5, 0.95);
-            backdrop-filter: blur(16px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-            z-index: 40;
-        }
-
-        .mobile-menu.active {
-            max-height: 500px;
-        }
-
-        .mobile-menu-content {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            padding: 1.5rem;
-        }
-
-        .mobile-menu-content a,
-        .mobile-menu-content button {
-            padding: 0.75rem;
-            border-radius: 0.5rem;
-            text-align: left;
-            transition: all 0.2s;
-            font-weight: 500;
-        }
-
-        .mobile-menu-content a:hover,
-        .mobile-menu-content button:hover {
-            background: rgba(14, 165, 233, 0.1);
-            color: var(--primary);
-        }
-
-        /* Disable pointer effects on mobile */
-        @media (max-width: 768px) {
-            body {
-                cursor: auto !important;
-            }
-
-            .cursor-pointer {
-                cursor: auto !important;
-            }
-
-            .hover\:cursor-pointer:hover {
-                cursor: auto !important;
-            }
-
-            .grid-effect-tile {
-                pointer-events: none !important;
-            }
-        }
-
         /* Custom Backgrounds */
         .bg-halftone {
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-        }
-
-        @media (max-width: 768px) {
-            .bg-halftone {
-                background-attachment: scroll;
-            }
         }
 
         /* Floating Flags Strip */
@@ -299,11 +233,6 @@
             .flag-item {
                 width: 78px;
                 height: 52px;
-            }
-
-            .flag-row {
-                gap: 16px;
-                padding: 12px 20px;
             }
         }
 
@@ -414,11 +343,6 @@
             .tool-label {
                 font-size: 11px;
             }
-
-            .tool-row {
-                gap: 20px;
-                padding: 14px 20px;
-            }
         }
 
 
@@ -499,7 +423,7 @@
             box-shadow: 0 0 10px rgba(14, 165, 233, 0.2);
         }
 
-        /* Testimonials Grid Effect - Disabled on mobile */
+        /* Testimonials Grid Effect */
         .grid-effect {
             display: grid;
             grid-template-columns: repeat(10, 1fr);
@@ -533,14 +457,6 @@
             transition: 70ms linear all;
         }
 
-        @media (max-width: 768px) {
-            .grid-effect-tile:hover::before {
-                height: 0.3rem;
-                width: 0.3rem;
-                transition: none;
-            }
-        }
-
         /* Digital Partners Section */
         .digital-partners {
             padding: 80px 20px;
@@ -548,12 +464,6 @@
             text-align: center;
             border-top: 1px solid rgba(255, 255, 255, 0.05);
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        @media (max-width: 640px) {
-            .digital-partners {
-                padding: 40px 16px;
-            }
         }
 
         html.light .digital-partners {
@@ -567,13 +477,6 @@
             margin-bottom: 40px;
             font-weight: 800;
             color: white;
-        }
-
-        @media (max-width: 640px) {
-            .digital-partners h2 {
-                font-size: 24px;
-                margin-bottom: 24px;
-            }
         }
 
         html.light .digital-partners h2 {
@@ -593,13 +496,6 @@
             width: 120px;
             height: 100%;
             z-index: 2;
-        }
-
-        @media (max-width: 640px) {
-            .partners-marquee::before,
-            .partners-marquee::after {
-                width: 60px;
-            }
         }
 
         .partners-marquee::before {
@@ -710,40 +606,6 @@
                 gap: 30px;
             }
         }
-
-        /* Responsive Padding */
-        @media (max-width: 768px) {
-            .px-6 {
-                padding-left: 1rem;
-                padding-right: 1rem;
-            }
-        }
-
-        /* Hero Section Mobile */
-        @media (max-width: 768px) {
-            .absolute.floating-elements {
-                display: none;
-            }
-        }
-
-        /* Menu Button Visibility */
-        #menu-toggle {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 44px;
-            height: 44px;
-            border-radius: 0.5rem;
-            transition: all 0.2s;
-        }
-
-        #menu-toggle:hover {
-            background: rgba(14, 165, 233, 0.1);
-        }
-
-        #menu-toggle:active {
-            background: rgba(14, 165, 233, 0.2);
-        }
     </style>
     <script>
         // Theme initialization
@@ -759,12 +621,12 @@
 
     <!-- Navigation -->
     <nav class="fixed top-0 w-full z-50 nav-blur">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
             <div class="flex items-center gap-3">
                 <a href="index.html" class="flex items-center gap-3">
                     <img src="images/logo1.png" alt="SigmaWeb Logo"
                         class="w-10 h-10 rounded-lg object-cover border border-white/10">
-                    <span class="text-xl sm:text-2xl font-bold tracking-tight text-white">Sigma<span
+                    <span class="text-2xl font-bold tracking-tight text-white">Sigma<span
                             class="text-sky-500">Web</span></span>
                 </a>
             </div>
@@ -784,132 +646,124 @@
             </div>
 
             <!-- Mobile Menu Toggle -->
-            <button class="md:hidden text-white" id="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
-                <i data-lucide="menu" class="w-6 h-6"></i>
+            <button class="md:hidden text-white" id="menu-toggle">
+                <i data-lucide="menu"></i>
             </button>
-        </div>
-
-        <!-- Mobile Menu -->
-        <div class="mobile-menu" id="mobile-menu">
-            <div class="mobile-menu-content max-w-7xl mx-auto px-4 sm:px-6">
-                <button id="theme-toggle-mobile" class="flex items-center gap-2 w-full rounded-lg hover:bg-white/10 transition-colors text-sky-500">
-                    <i data-lucide="moon" class="dark-icon w-5 h-5"></i>
-                    <i data-lucide="sun" class="light-icon hidden w-5 h-5"></i>
-                    <span class="text-sm font-medium">Theme</span>
-                </button>
-                <a href="#home" class="text-white hover:text-sky-400 transition-colors block rounded-lg">Home</a>
-                <a href="#services" class="text-white hover:text-sky-400 transition-colors block rounded-lg">Services</a>
-                <a href="#portfolio" class="text-white hover:text-sky-400 transition-colors block rounded-lg">Portfolio</a>
-                <a href="#blog" class="text-white hover:text-sky-400 transition-colors block rounded-lg">Insights</a>
-                <a href="#contact"
-                    class="block text-center px-5 py-2.5 bg-sky-500 text-black rounded-full font-bold hover:bg-sky-400 transition-all">Get
-                    Started</a>
-            </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="relative min-h-screen pt-24 sm:pt-32 pb-12 sm:pb-20 hero-gradient flex items-center">
+    <section id="home" class="relative min-h-screen pt-32 pb-20 hero-gradient flex items-center">
         <div class="absolute inset-0 z-0 opacity-20 pointer-events-none">
             <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-sky-500/20 blur-[120px] rounded-full"></div>
             <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/10 blur-[120px] rounded-full"></div>
         </div>
 
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 grid md:grid-cols-2 gap-8 sm:gap-12 items-center">
+        <div class="max-w-7xl mx-auto px-6 relative z-10 grid md:grid-cols-2 gap-12 items-center">
             <div class="animate-fade-up">
                 <div
-                    class="inline-block px-4 py-1.5 bg-sky-500/10 border border-sky-500/20 rounded-full text-sky-400 text-xs sm:text-sm font-semibold mb-6">
+                    class="inline-block px-4 py-1.5 bg-sky-500/10 border border-sky-500/20 rounded-full text-sky-400 text-sm font-semibold mb-6">
                     Professional. Futuristic. Tech-Oriented
                 </div>
-                <h1 class="text-3xl sm:text-5xl md:text-7xl font-extrabold leading-[1.1] mb-6 text-white">
+                <h1 class="text-5xl md:text-7xl font-extrabold leading-[1.1] mb-6 text-white">
                     Transform Your <span
-                        class="bg-gradient-to-r from-sky-400 to-sky-600 bg-clip-text text-transparent">Digital
+                        class="bg-gradient-to-r from-sky-400 to-sky-600 bg-clip-text text-transparent text-glow">Digital
                         Presence</span> with Modern Solutions
                 </h1>
-                <p class="text-base sm:text-xl text-slate-400 mb-8 sm:mb-10 max-w-lg leading-relaxed">
+                <p class="text-xl text-slate-400 mb-10 max-w-lg leading-relaxed">
                     We engineer premium web experiences, scalable apps, and high-performance digital marketing
                     strategies to scale your business.
                 </p>
-                <div class="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
+                <div class="flex flex-wrap gap-4">
                     <a href="#contact"
-                        class="px-6 sm:px-8 py-3 sm:py-4 bg-sky-500 text-black rounded-full font-bold hover:bg-sky-400 transition-all flex items-center justify-center sm:justify-start gap-2 group text-sm sm:text-base">
+                        class="px-8 py-4 bg-sky-500 text-black rounded-full font-bold hover:bg-sky-400 transition-all flex items-center gap-2 group">
                         Get a Free Consultation
-                        <i data-lucide="arrow-right" class="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform"></i>
+                        <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
                     </a>
                     <a href="#portfolio"
-                        class="px-6 sm:px-8 py-3 sm:py-4 bg-white/5 border border-white/10 text-white rounded-full font-bold hover:bg-white/10 transition-all text-center text-sm sm:text-base">
+                        class="px-8 py-4 bg-white/5 border border-white/10 text-white rounded-full font-bold hover:bg-white/10 transition-all">
                         View Our Work
                     </a>
                 </div>
             </div>
 
-            <div class="relative z-10 glass rounded-3xl p-4 border border-white/10 overflow-hidden hidden sm:block">
-                <img src="images/hero image.jpeg" alt="SigmaWeb Services"
+            <div class="relative z-10 glass rounded-3xl p-4 border border-white/10 overflow-hidden">
+                <img src="images/hero image.jpeg" alt="Shubham Yadav"
                     class="rounded-2xl shadow-2xl w-full h-full object-cover">
             </div>
+            <!-- Floating Elements -->
+            <div class="absolute -top-6 -right-6 glass p-6 rounded-2xl border border-sky-500/30 animate-bounce"
+                style="animation-duration: 4s;">
+                <i data-lucide="code" class="text-sky-400 w-8 h-8"></i>
+            </div>
+            <div class="absolute -bottom-6 -left-6 glass p-6 rounded-2xl border border-purple-500/30 animate-bounce"
+                style="animation-duration: 5s;">
+                <i data-lucide="cpu" class="text-purple-400 w-8 h-8"></i>
+            </div>
+        </div>
         </div>
     </section>
 
     <!-- Stats Section -->
     <section class="py-12 border-y border-white/5 bg-white/[0.02]">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-8">
             <div class="text-center">
-                <div class="text-2xl sm:text-4xl font-bold text-white mb-2">500+</div>
-                <div class="text-sky-500 text-xs sm:text-sm font-semibold uppercase tracking-widest">Projects Delivered</div>
+                <div class="text-4xl font-bold text-white mb-2">500+</div>
+                <div class="text-sky-500 text-sm font-semibold uppercase tracking-widest">Projects Delivered</div>
             </div>
             <div class="text-center">
-                <div class="text-2xl sm:text-4xl font-bold text-white mb-2">150+</div>
-                <div class="text-sky-500 text-xs sm:text-sm font-semibold uppercase tracking-widest">Happy Clients</div>
+                <div class="text-4xl font-bold text-white mb-2">150+</div>
+                <div class="text-sky-500 text-sm font-semibold uppercase tracking-widest">Happy Clients</div>
             </div>
             <div class="text-center">
-                <div class="text-2xl sm:text-4xl font-bold text-white mb-2">12+</div>
-                <div class="text-sky-500 text-xs sm:text-sm font-semibold uppercase tracking-widest">Years Experience</div>
+                <div class="text-4xl font-bold text-white mb-2">12+</div>
+                <div class="text-sky-500 text-sm font-semibold uppercase tracking-widest">Years Experience</div>
             </div>
             <div class="text-center">
-                <div class="text-2xl sm:text-4xl font-bold text-white mb-2">99%</div>
-                <div class="text-sky-500 text-xs sm:text-sm font-semibold uppercase tracking-widest">Satisfaction</div>
+                <div class="text-4xl font-bold text-white mb-2">99%</div>
+                <div class="text-sky-500 text-sm font-semibold uppercase tracking-widest">Client Satisfaction</div>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-16 sm:py-24 relative overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 grid md:grid-cols-2 gap-8 sm:gap-16 items-center">
+    <section id="about" class="py-24 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
             <div class="relative">
                 <img src="images/my pic with pc.jpeg"
-                    alt="Shubham Yadav - Founder"
-                    class="rounded-3xl relative z-10 grayscale hover:grayscale-0 transition-all duration-700 w-full">
+                    alt="Shubham Yadav"
+                    class="rounded-3xl relative z-10 grayscale hover:grayscale-0 transition-all duration-700">
                 <div class="absolute -top-10 -left-10 w-40 h-40 bg-sky-500/10 rounded-full blur-[60px]"></div>
             </div>
             <div>
-                <h2 class="text-sky-500 font-bold tracking-widest uppercase text-xs sm:text-sm mb-4">Who We Are</h2>
-                <h3 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6 sm:mb-8 leading-tight">We Build Future-Ready Digital
+                <h2 class="text-sky-500 font-bold tracking-widest uppercase text-sm mb-4">Who We Are</h2>
+                <h3 class="text-4xl md:text-5xl font-bold text-white mb-8 leading-tight">We Build Future-Ready Digital
                     Solutions</h3>
-                <p class="text-slate-400 text-base sm:text-lg mb-6 sm:mb-8 leading-relaxed">
+                <p class="text-slate-400 text-lg mb-8 leading-relaxed">
                     SigmaWeb is a collective of visionary designers and elite developers dedicated to pushing the
                     boundaries of what's possible online. We blend creativity with technical precision to deliver
                     unmatched results.
                 </p>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-8 sm:mb-10">
+                <div class="grid grid-cols-2 gap-6 mb-10">
                     <div class="flex items-start gap-4">
-                        <div class="p-2 bg-sky-500/10 rounded-lg text-sky-500 flex-shrink-0"><i data-lucide="zap" class="w-5 h-5"></i></div>
+                        <div class="p-2 bg-sky-500/10 rounded-lg text-sky-500"><i data-lucide="zap"></i></div>
                         <div>
-                            <h4 class="font-bold text-white mb-1 text-sm sm:text-base">Innovation</h4>
-                            <p class="text-xs sm:text-sm text-slate-500">Cutting-edge tech stack.</p>
+                            <h4 class="font-bold text-white mb-1">Innovation</h4>
+                            <p class="text-sm text-slate-500">Cutting-edge tech stack.</p>
                         </div>
                     </div>
                     <div class="flex items-start gap-4">
-                        <div class="p-2 bg-sky-500/10 rounded-lg text-sky-500 flex-shrink-0"><i data-lucide="layers" class="w-5 h-5"></i></div>
+                        <div class="p-2 bg-sky-500/10 rounded-lg text-sky-500"><i data-lucide="layers"></i></div>
                         <div>
-                            <h4 class="font-bold text-white mb-1 text-sm sm:text-base">Strategy</h4>
-                            <p class="text-xs sm:text-sm text-slate-500">Data-driven approaches.</p>
+                            <h4 class="font-bold text-white mb-1">Strategy</h4>
+                            <p class="text-sm text-slate-500">Data-driven approaches.</p>
                         </div>
                     </div>
                 </div>
                 <a href="#contact"
-                    class="inline-flex items-center gap-2 text-sky-500 font-bold hover:text-sky-400 transition-colors text-sm sm:text-base">
+                    class="inline-flex items-center gap-2 text-sky-500 font-bold hover:text-sky-400 transition-colors">
                     Learn more about our process
-                    <i data-lucide="chevron-right" class="w-4 h-4 sm:w-5 sm:h-5"></i>
+                    <i data-lucide="chevron-right" class="w-5 h-5"></i>
                 </a>
             </div>
         </div>
@@ -917,10 +771,10 @@
 
     <!-- Floating Flags Strip -->
     <section class="flag-strip" aria-label="Global presence">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6">
-            <div class="text-center py-6 sm:py-8">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center py-8">
                 <p
-                    class="inline-block text-white font-bold tracking-widest uppercase text-lg sm:text-2xl md:text-3xl px-4 sm:px-6 py-2 border border-white/70 rounded-full">
+                    class="inline-block text-white font-bold tracking-widest uppercase text-2xl md:text-3xl px-6 py-2 border border-white/70 rounded-full">
                     We Are Serving In
                 </p>
             </div>
@@ -994,210 +848,387 @@
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="py-16 sm:py-24 bg-halftone relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6">
-            <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-20">
-                <h2 class="text-sky-500 font-bold tracking-widest uppercase text-xs sm:text-sm mb-4">Our Expertise</h2>
-                <h3 class="text-2xl sm:text-4xl md:text-5xl font-bold text-black mb-4 sm:mb-6 force-black">Comprehensive Tech Solutions</h3>
-                <p class="text-slate-400 text-base sm:text-lg force-black">From concept to deployment, we provide end-to-end services
-                    to accelerate your digital growth.</p>
+    <section id="services" class="py-24 bg-halftone relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-20">
+                <h2 class="text-sky-500 font-bold tracking-widest uppercase text-sm mb-4">Our Expertise</h2>
+                <h3 class="text-4xl md:text-5xl font-bold text-black mb-6 force-black">Comprehensive Tech Solutions</h3>
+                <p class="text-slate-400 text-lg force-black">From concept to deployment, we provide end-to-end services
+                    to
+                    accelerate your digital growth.</p>
             </div>
 
-            <div class="flex flex-wrap justify-center gap-4 sm:gap-6">
+            <div class="flex flex-wrap justify-center gap-6">
                 <!-- Service 1 -->
                 <div
-                    class="service-card card-black p-6 sm:p-8 rounded-2xl group w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(25%-1.125rem)] min-w-[200px] sm:min-w-[240px]">
+                    class="service-card card-black p-8 rounded-2xl group w-full md:w-[calc(50%-1rem)] lg:w-[calc(25%-1.25rem)] min-w-[240px]">
                     <div
                         class="icon-box w-12 h-12 bg-sky-500/10 rounded-xl flex items-center justify-center text-sky-500 mb-6 transition-all duration-300">
-                        <i data-lucide="globe" class="w-6 h-6"></i>
+                        <i data-lucide="globe"></i>
                     </div>
-                    <h4 class="text-lg sm:text-xl font-bold text-white mb-3">Custom Website</h4>
-                    <p class="text-slate-500 text-xs sm:text-sm leading-relaxed mb-6">Tailor-made websites built for performance, security, and scalability.</p>
+                    <h4 class="text-xl font-bold text-white mb-3">Custom Website Development</h4>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-6">Tailor-made websites built for performance,
+                        security, and scalability.</p>
                     <a href="custom-website.html"
-                        class="text-xs font-bold uppercase tracking-widest text-sky-500 group-hover:text-white transition-colors">Explore →</a>
+                        class="text-xs font-bold uppercase tracking-widest text-sky-500 group-hover:text-white transition-colors">Explore
+                        →</a>
                 </div>
 
                 <!-- Service 2 -->
                 <div
-                    class="service-card card-black p-6 sm:p-8 rounded-2xl group w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(25%-1.125rem)] min-w-[200px] sm:min-w-[240px]">
+                    class="service-card card-black p-8 rounded-2xl group w-full md:w-[calc(50%-1rem)] lg:w-[calc(25%-1.25rem)] min-w-[240px]">
                     <div
                         class="icon-box w-12 h-12 bg-sky-500/10 rounded-xl flex items-center justify-center text-sky-500 mb-6 transition-all duration-300">
-                        <i data-lucide="shopping-cart" class="w-6 h-6"></i>
+                        <i data-lucide="shopping-cart"></i>
                     </div>
-                    <h4 class="text-lg sm:text-xl font-bold text-white mb-3">E-Commerce</h4>
-                    <p class="text-slate-500 text-xs sm:text-sm leading-relaxed mb-6">Robust online stores that convert visitors into loyal customers.</p>
+                    <h4 class="text-xl font-bold text-white mb-3">E-Commerce Development</h4>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-6">Robust online stores that convert visitors
+                        into loyal customers.</p>
                     <a href="ecommerce.html"
-                        class="text-xs font-bold uppercase tracking-widest text-sky-500 group-hover:text-white transition-colors">Explore →</a>
+                        class="text-xs font-bold uppercase tracking-widest text-sky-500 group-hover:text-white transition-colors">Explore
+                        →</a>
                 </div>
 
                 <!-- Service 3 -->
                 <div
-                    class="service-card card-black p-6 sm:p-8 rounded-2xl group w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(25%-1.125rem)] min-w-[200px] sm:min-w-[240px]">
+                    class="service-card card-black p-8 rounded-2xl group w-full md:w-[calc(50%-1rem)] lg:w-[calc(25%-1.25rem)] min-w-[240px]">
                     <div
                         class="icon-box w-12 h-12 bg-sky-500/10 rounded-xl flex items-center justify-center text-sky-500 mb-6 transition-all duration-300">
-                        <i data-lucide="layout" class="w-6 h-6"></i>
+                        <i data-lucide="layout"></i>
                     </div>
-                    <h4 class="text-lg sm:text-xl font-bold text-white mb-3">Web Application</h4>
-                    <p class="text-slate-500 text-xs sm:text-sm leading-relaxed mb-6">Complex web apps designed with a focus on UX and high-end tech.</p>
+                    <h4 class="text-xl font-bold text-white mb-3">Web Application</h4>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-6">Complex web apps designed with a focus on UX
+                        and high-end tech.</p>
                     <a href="web-app.html"
-                        class="text-xs font-bold uppercase tracking-widest text-sky-500 group-hover:text-white transition-colors">Explore →</a>
+                        class="text-xs font-bold uppercase tracking-widest text-sky-500 group-hover:text-white transition-colors">Explore
+                        →</a>
                 </div>
 
                 <!-- Service 4 -->
                 <div
-                    class="service-card card-black p-6 sm:p-8 rounded-2xl group w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(25%-1.125rem)] min-w-[200px] sm:min-w-[240px]">
+                    class="service-card card-black p-8 rounded-2xl group w-full md:w-[calc(50%-1rem)] lg:w-[calc(25%-1.25rem)] min-w-[240px]">
                     <div
                         class="icon-box w-12 h-12 bg-sky-500/10 rounded-xl flex items-center justify-center text-sky-500 mb-6 transition-all duration-300">
-                        <i data-lucide="smartphone" class="w-6 h-6"></i>
+                        <i data-lucide="smartphone"></i>
                     </div>
-                    <h4 class="text-lg sm:text-xl font-bold text-white mb-3">Mobile App</h4>
-                    <p class="text-slate-500 text-xs sm:text-sm leading-relaxed mb-6">Native and cross-platform apps for iOS and Android.</p>
+                    <h4 class="text-xl font-bold text-white mb-3">Mobile App Development</h4>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-6">Native and cross-platform apps for iOS and
+                        Android.</p>
                     <a href="mobile-app.html"
-                        class="text-xs font-bold uppercase tracking-widest text-sky-500 group-hover:text-white transition-colors">Explore →</a>
+                        class="text-xs font-bold uppercase tracking-widest text-sky-500 group-hover:text-white transition-colors">Explore
+                        →</a>
                 </div>
 
                 <!-- Service 5 -->
                 <div
-                    class="service-card card-black p-6 sm:p-8 rounded-2xl group w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(25%-1.125rem)] min-w-[200px] sm:min-w-[240px]">
+                    class="service-card card-black p-8 rounded-2xl group w-full md:w-[calc(50%-1rem)] lg:w-[calc(25%-1.25rem)] min-w-[240px]">
                     <div
                         class="icon-box w-12 h-12 bg-sky-500/10 rounded-xl flex items-center justify-center text-sky-500 mb-6 transition-all duration-300">
-                        <i data-lucide="search" class="w-6 h-6"></i>
+                        <i data-lucide="search"></i>
                     </div>
-                    <h4 class="text-lg sm:text-xl font-bold text-white mb-3">SEO Optimization</h4>
-                    <p class="text-slate-500 text-xs sm:text-sm leading-relaxed mb-6">Search engine strategies that put you on the first page.</p>
+                    <h4 class="text-xl font-bold text-white mb-3">SEO Optimization</h4>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-6">Search engine strategies that put you on the
+                        first page.</p>
                     <a href="seo.html"
-                        class="text-xs font-bold uppercase tracking-widest text-sky-500 group-hover:text-white transition-colors">Explore →</a>
+                        class="text-xs font-bold uppercase tracking-widest text-sky-500 group-hover:text-white transition-colors">Explore
+                        →</a>
                 </div>
 
                 <!-- Service 6 -->
                 <div
-                    class="service-card card-black p-6 sm:p-8 rounded-2xl group w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(25%-1.125rem)] min-w-[200px] sm:min-w-[240px]">
+                    class="service-card card-black p-8 rounded-2xl group w-full md:w-[calc(50%-1rem)] lg:w-[calc(25%-1.25rem)] min-w-[240px]">
                     <div
                         class="icon-box w-12 h-12 bg-sky-500/10 rounded-xl flex items-center justify-center text-sky-500 mb-6 transition-all duration-300">
-                        <i data-lucide="bar-chart-3" class="w-6 h-6"></i>
+                        <i data-lucide="bar-chart-3"></i>
                     </div>
-                    <h4 class="text-lg sm:text-xl font-bold text-white mb-3">Digital Marketing</h4>
-                    <p class="text-slate-500 text-xs sm:text-sm leading-relaxed mb-6">Integrated marketing campaigns across all digital channels.</p>
+                    <h4 class="text-xl font-bold text-white mb-3">Digital Marketing</h4>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-6">Integrated marketing campaigns across all
+                        digital channels.</p>
                     <a href="digital-marketing.html"
-                        class="text-xs font-bold uppercase tracking-widest text-sky-500 group-hover:text-white transition-colors">Explore →</a>
+                        class="text-xs font-bold uppercase tracking-widest text-sky-500 group-hover:text-white transition-colors">Explore
+                        →</a>
                 </div>
 
                 <!-- Service 7 -->
                 <div
-                    class="service-card card-black p-6 sm:p-8 rounded-2xl group w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(25%-1.125rem)] min-w-[200px] sm:min-w-[240px]">
+                    class="service-card card-black p-8 rounded-2xl group w-full md:w-[calc(50%-1rem)] lg:w-[calc(25%-1.25rem)] min-w-[240px]">
                     <div
                         class="icon-box w-12 h-12 bg-sky-500/10 rounded-xl flex items-center justify-center text-sky-500 mb-6 transition-all duration-300">
-                        <i data-lucide="palette" class="w-6 h-6"></i>
+                        <i data-lucide="palette"></i>
                     </div>
-                    <h4 class="text-lg sm:text-xl font-bold text-white mb-3">UI/UX Design</h4>
-                    <p class="text-slate-500 text-xs sm:text-sm leading-relaxed mb-6">User-centric designs that are beautiful and intuitive.</p>
+                    <h4 class="text-xl font-bold text-white mb-3">UI/UX Design</h4>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-6">User-centric designs that are beautiful and
+                        intuitive.</p>
                     <a href="ui-ux.html"
-                        class="text-xs font-bold uppercase tracking-widest text-sky-500 group-hover:text-white transition-colors">Explore →</a>
+                        class="text-xs font-bold uppercase tracking-widest text-sky-500 group-hover:text-white transition-colors">Explore
+                        →</a>
                 </div>
 
                 <!-- Service 8 -->
                 <div
-                    class="service-card card-black p-6 sm:p-8 rounded-2xl group w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(25%-1.125rem)] min-w-[200px] sm:min-w-[240px]">
+                    class="service-card card-black p-8 rounded-2xl group w-full md:w-[calc(50%-1rem)] lg:w-[calc(25%-1.25rem)] min-w-[240px]">
                     <div
                         class="icon-box w-12 h-12 bg-sky-500/10 rounded-xl flex items-center justify-center text-sky-500 mb-6 transition-all duration-300">
-                        <i data-lucide="gauge" class="w-6 h-6"></i>
+                        <i data-lucide="gauge"></i>
                     </div>
-                    <h4 class="text-lg sm:text-xl font-bold text-white mb-3">Speed Optimization</h4>
-                    <p class="text-slate-500 text-xs sm:text-sm leading-relaxed mb-6">Performance tuning for lightning-fast loading speeds.</p>
+                    <h4 class="text-xl font-bold text-white mb-3">Speed Optimization</h4>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-6">Performance tuning for lightning-fast loading
+                        speeds.</p>
                     <a href="speed-optimization.html"
-                        class="text-xs font-bold uppercase tracking-widest text-sky-500 group-hover:text-white transition-colors">Explore →</a>
+                        class="text-xs font-bold uppercase tracking-widest text-sky-500 group-hover:text-white transition-colors">Explore
+                        →</a>
                 </div>
 
                 <!-- Service 9 -->
                 <div
-                    class="service-card card-black p-6 sm:p-8 rounded-2xl group w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(25%-1.125rem)] min-w-[200px] sm:min-w-[240px]">
+                    class="service-card card-black p-8 rounded-2xl group w-full md:w-[calc(50%-1rem)] lg:w-[calc(25%-1.25rem)] min-w-[240px]">
                     <div
                         class="icon-box w-12 h-12 bg-sky-500/10 rounded-xl flex items-center justify-center text-sky-500 mb-6 transition-all duration-300">
-                        <i data-lucide="database" class="w-6 h-6"></i>
+                        <i data-lucide="database"></i>
                     </div>
-                    <h4 class="text-lg sm:text-xl font-bold text-white mb-3">PHP Development</h4>
-                    <p class="text-slate-500 text-xs sm:text-sm leading-relaxed mb-6">Custom backend solutions and legacy system support.</p>
+                    <h4 class="text-xl font-bold text-white mb-3">PHP Development</h4>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-6">Custom backend solutions and legacy system
+                        support.</p>
                     <a href="php-development.html"
-                        class="text-xs font-bold uppercase tracking-widest text-sky-500 group-hover:text-white transition-colors">Explore →</a>
+                        class="text-xs font-bold uppercase tracking-widest text-sky-500 group-hover:text-white transition-colors">Explore
+                        →</a>
+                </div>
+
+                <!-- Service 10 -->
+                <div
+                    class="service-card card-black p-8 rounded-2xl group w-full md:w-[calc(50%-1rem)] lg:w-[calc(25%-1.25rem)] min-w-[240px]">
+                    <div
+                        class="icon-box w-12 h-12 bg-sky-500/10 rounded-xl flex items-center justify-center text-sky-500 mb-6 transition-all duration-300">
+                        <i data-lucide="pencil"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3">Content Writing</h4>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-6">Engaging and SEO-optimized content that
+                        drives results.</p>
+                    <a href="content-writing.html"
+                        class="text-xs font-bold uppercase tracking-widest text-sky-500 group-hover:text-white transition-colors">Explore
+                        →</a>
+                </div>
+
+                <!-- Service 11 -->
+                <div
+                    class="service-card card-black p-8 rounded-2xl group w-full md:w-[calc(50%-1rem)] lg:w-[calc(25%-1.25rem)] min-w-[240px]">
+                    <div
+                        class="icon-box w-12 h-12 bg-sky-500/10 rounded-xl flex items-center justify-center text-sky-500 mb-6 transition-all duration-300">
+                        <i data-lucide="social"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3">Social Media Marketing</h4>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-6">Strategic social campaigns that build
+                        community and engagement.</p>
+                    <a href="social-media.html"
+                        class="text-xs font-bold uppercase tracking-widest text-sky-500 group-hover:text-white transition-colors">Explore
+                        →</a>
+                </div>
+
+                <!-- Service 12 -->
+                <div
+                    class="service-card card-black p-8 rounded-2xl group w-full md:w-[calc(50%-1rem)] lg:w-[calc(25%-1.25rem)] min-w-[240px]">
+                    <div
+                        class="icon-box w-12 h-12 bg-sky-500/10 rounded-xl flex items-center justify-center text-sky-500 mb-6 transition-all duration-300">
+                        <i data-lucide="image"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3">Graphic Design</h4>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-6">Visual branding that stands out and makes an
+                        impact.</p>
+                    <a href="graphic-design.html"
+                        class="text-xs font-bold uppercase tracking-widest text-sky-500 group-hover:text-white transition-colors">Explore
+                        →</a>
+                </div>
+
+                <!-- Service 13 -->
+                <div
+                    class="service-card card-black p-8 rounded-2xl group w-full md:w-[calc(50%-1rem)] lg:w-[calc(25%-1.25rem)] min-w-[240px]">
+                    <div
+                        class="icon-box w-12 h-12 bg-sky-500/10 rounded-xl flex items-center justify-center text-sky-500 mb-6 transition-all duration-300">
+                        <i data-lucide="briefcase"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3">Logo Design</h4>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-6">Unique logo designs that define your brand
+                        identity.</p>
+                    <a href="logo-design.html"
+                        class="text-xs font-bold uppercase tracking-widest text-sky-500 group-hover:text-white transition-colors">Explore
+                        →</a>
+                </div>
+
+                <!-- Service 14 -->
+                <div
+                    class="service-card card-black p-8 rounded-2xl group w-full md:w-[calc(50%-1rem)] lg:w-[calc(25%-1.25rem)] min-w-[240px]">
+                    <div
+                        class="icon-box w-12 h-12 bg-sky-500/10 rounded-xl flex items-center justify-center text-sky-500 mb-6 transition-all duration-300">
+                        <i data-lucide="target"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3">Marketing Strategy</h4>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-6">Data-driven strategies that grow your
+                        business and ROI.</p>
+                    <a href="marketing-strategy.html"
+                        class="text-xs font-bold uppercase tracking-widest text-sky-500 group-hover:text-white transition-colors">Explore
+                        →</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- JavaScript for Mobile Menu & Theme Toggle -->
+    <!-- Digital Partners -->
+    <section class="digital-partners">
+        <h2>Our Trusted Partners</h2>
+        <div class="partners-marquee">
+            <div class="partners-track">
+                <div class="partner">
+                    <img src="images/partner-1.png" alt="Partner 1">
+                    <span>Partner 1</span>
+                </div>
+                <div class="partner">
+                    <img src="images/partner-2.png" alt="Partner 2">
+                    <span>Partner 2</span>
+                </div>
+                <div class="partner">
+                    <img src="images/partner-3.png" alt="Partner 3">
+                    <span>Partner 3</span>
+                </div>
+                <div class="partner">
+                    <img src="images/partner-4.png" alt="Partner 4">
+                    <span>Partner 4</span>
+                </div>
+                <div class="partner">
+                    <img src="images/partner-5.png" alt="Partner 5">
+                    <span>Partner 5</span>
+                </div>
+                <!-- Duplicate for seamless loop -->
+                <div class="partner">
+                    <img src="images/partner-1.png" alt="Partner 1">
+                    <span>Partner 1</span>
+                </div>
+                <div class="partner">
+                    <img src="images/partner-2.png" alt="Partner 2">
+                    <span>Partner 2</span>
+                </div>
+                <div class="partner">
+                    <img src="images/partner-3.png" alt="Partner 3">
+                    <span>Partner 3</span>
+                </div>
+                <div class="partner">
+                    <img src="images/partner-4.png" alt="Partner 4">
+                    <span>Partner 4</span>
+                </div>
+                <div class="partner">
+                    <img src="images/partner-5.png" alt="Partner 5">
+                    <span>Partner 5</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tools & Technologies -->
+    <section class="tool-strip">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center py-8">
+                <p class="text-center text-2xl md:text-3xl font-bold text-[#0f172a] mb-12 uppercase tracking-wider">
+                    Tools & Technologies We Use
+                </p>
+            </div>
+            <div class="tool-track">
+                <div class="tool-row">
+                    <div class="tool-item-wrap">
+                        <div class="tool-item">
+                            <img src="images/tools/html.png" alt="HTML5">
+                        </div>
+                        <span class="tool-label">HTML5</span>
+                    </div>
+                    <div class="tool-item-wrap">
+                        <div class="tool-item">
+                            <img src="images/tools/css.png" alt="CSS3">
+                        </div>
+                        <span class="tool-label">CSS3</span>
+                    </div>
+                    <div class="tool-item-wrap">
+                        <div class="tool-item">
+                            <img src="images/tools/javascript.png" alt="JavaScript">
+                        </div>
+                        <span class="tool-label">JavaScript</span>
+                    </div>
+                    <div class="tool-item-wrap">
+                        <div class="tool-item">
+                            <img src="images/tools/react.png" alt="React">
+                        </div>
+                        <span class="tool-label">React</span>
+                    </div>
+                    <div class="tool-item-wrap">
+                        <div class="tool-item">
+                            <img src="images/tools/vue.png" alt="Vue">
+                        </div>
+                        <span class="tool-label">Vue</span>
+                    </div>
+                    <div class="tool-item-wrap">
+                        <div class="tool-item">
+                            <img src="images/tools/node.png" alt="Node.js">
+                        </div>
+                        <span class="tool-label">Node.js</span>
+                    </div>
+                    <div class="tool-item-wrap">
+                        <div class="tool-item">
+                            <img src="images/tools/mongodb.png" alt="MongoDB">
+                        </div>
+                        <span class="tool-label">MongoDB</span>
+                    </div>
+                    <div class="tool-item-wrap">
+                        <div class="tool-item">
+                            <img src="images/tools/php.png" alt="PHP">
+                        </div>
+                        <span class="tool-label">PHP</span>
+                    </div>
+                    <div class="tool-item-wrap">
+                        <div class="tool-item">
+                            <img src="images/tools/python.png" alt="Python">
+                        </div>
+                        <span class="tool-label">Python</span>
+                    </div>
+                    <!-- Duplicate for seamless scroll -->
+                    <div class="tool-item-wrap">
+                        <div class="tool-item">
+                            <img src="images/tools/html.png" alt="HTML5">
+                        </div>
+                        <span class="tool-label">HTML5</span>
+                    </div>
+                    <div class="tool-item-wrap">
+                        <div class="tool-item">
+                            <img src="images/tools/css.png" alt="CSS3">
+                        </div>
+                        <span class="tool-label">CSS3</span>
+                    </div>
+                    <div class="tool-item-wrap">
+                        <div class="tool-item">
+                            <img src="images/tools/javascript.png" alt="JavaScript">
+                        </div>
+                        <span class="tool-label">JavaScript</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <script>
-        // Mobile Menu Toggle
-        const menuToggle = document.getElementById('menu-toggle');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const themeToggleMobile = document.getElementById('theme-toggle-mobile');
+        // Theme toggle
         const themeToggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
 
-        // Menu toggle click
-        menuToggle.addEventListener('click', () => {
-            const isActive = mobileMenu.classList.toggle('active');
-            menuToggle.setAttribute('aria-expanded', isActive);
-        });
-
-        // Close menu when a link is clicked
-        document.querySelectorAll('.mobile-menu-content a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.remove('active');
-                menuToggle.setAttribute('aria-expanded', 'false');
-            });
-        });
-
-        // Theme toggle desktop
-        themeToggle.addEventListener('click', toggleTheme);
-
-        // Theme toggle mobile
-        if (themeToggleMobile) {
-            themeToggleMobile.addEventListener('click', toggleTheme);
-        }
-
-        // Theme toggle function
-        function toggleTheme() {
-            const html = document.documentElement;
-            const isDark = html.classList.contains('light');
-
-            if (isDark) {
-                html.classList.remove('light');
-                localStorage.setItem('theme', 'dark');
-            } else {
-                html.classList.add('light');
-                localStorage.setItem('theme', 'light');
-            }
-
-            // Update icons
+        themeToggle.addEventListener('click', () => {
+            html.classList.toggle('light');
+            localStorage.setItem('theme', html.classList.contains('light') ? 'light' : 'dark');
             updateThemeIcons();
-        }
+        });
 
-        // Update theme icons
         function updateThemeIcons() {
-            const isDark = document.documentElement.classList.contains('light');
-            document.querySelectorAll('.dark-icon').forEach(icon => {
-                icon.classList.toggle('hidden', isDark);
-            });
-            document.querySelectorAll('.light-icon').forEach(icon => {
-                icon.classList.toggle('hidden', !isDark);
-            });
+            const isDark = html.classList.contains('light');
+            document.querySelectorAll('.dark-icon').forEach(el => el.classList.toggle('hidden', isDark));
+            document.querySelectorAll('.light-icon').forEach(el => el.classList.toggle('hidden', !isDark));
         }
 
-        // Initialize icons on load
         updateThemeIcons();
-
-        // Initialize Lucide icons
         lucide.createIcons();
-
-        // Disable pointer effects on touch devices
-        const isTouchDevice = () => {
-            return (('ontouchstart' in window) ||
-                (navigator.maxTouchPoints > 0) ||
-                (navigator.msMaxTouchPoints > 0));
-        };
-
-        if (isTouchDevice()) {
-            document.body.style.cursor = 'auto';
-        }
     </script>
 </body>
 
